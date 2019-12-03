@@ -1,4 +1,6 @@
-class SuffixTreeEdge {
+package suffixTree;
+
+public class SuffixTreeEdge {
 
     private int start;
     private int end;

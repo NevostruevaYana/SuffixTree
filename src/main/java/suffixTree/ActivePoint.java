@@ -1,4 +1,6 @@
-class ActivePoint {
+package suffixTree;
+
+public class ActivePoint {
 
     // первый индекс текущей активной точки
     int activePointIndex;

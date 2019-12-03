@@ -1,13 +1,15 @@
+package suffixTree;
+
 import java.util.LinkedList;
 
-class SuffixTree {
+public class SuffixTree {
 
     private SuffixTreeNode root;
     private String text;
     private LinkedList<SuffixTreeEdge> leafEdges;
 
     // конструктор для создания дерева
-    SuffixTree(String text) {
+    public SuffixTree(String text) {
         root = new SuffixTreeNode();
         this.text = text;
         leafEdges = new LinkedList<SuffixTreeEdge>();
@@ -15,7 +17,7 @@ class SuffixTree {
         build();
     }
 
-    boolean search(String search) {
+    public boolean search(String search) {
 
         SuffixTreeNode parentNode = root;
         SuffixTreeEdge currentEdge = null;
