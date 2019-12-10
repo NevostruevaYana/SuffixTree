@@ -1,10 +1,11 @@
 package suffixTree;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class SuffixTreeNode {
 
-    private HashMap<Character, SuffixTreeEdge> childEdges;
+    private Map<Character, SuffixTreeEdge> childEdges;
     // ссылка на узел, в который впоследствии вставляем тех же потомков
     private SuffixTreeNode link;
 

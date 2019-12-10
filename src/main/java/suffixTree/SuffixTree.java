@@ -107,7 +107,7 @@ public class SuffixTree {
                 if (activePoint.activePointIndex < i) {
                     activePoint.activePointIndex++;
                 }
-                //инкрементируем индекс активной точки и выходи из цикл while
+                //инкрементируем индекс активной точки и выходим из цикла while
                 else {
                     activePoint.activePointIndex++;
                     break;
