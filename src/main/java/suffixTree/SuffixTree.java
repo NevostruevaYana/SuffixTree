@@ -1,18 +1,17 @@
 package suffixTree;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class SuffixTree {
 
     private SuffixTreeNode root;
     private String text;
-    private LinkedList<SuffixTreeEdge> leafEdges;
 
     // конструктор для создания дерева
     public SuffixTree(String text) {
         root = new SuffixTreeNode();
         this.text = text;
-        leafEdges = new LinkedList<SuffixTreeEdge>();
 
         build();
     }
@@ -68,9 +67,10 @@ public class SuffixTree {
     private void build() {
         ActivePoint activePoint = new ActivePoint(root, 0);
         int textLength = text.length();
+        List<SuffixTreeEdge> leafEdges = new LinkedList<SuffixTreeEdge>();
 
         for (int i = 0; i < textLength; i++) {
-            update(activePoint, i);
+            leafEdges = update(activePoint, i, leafEdges);
             canonize(activePoint, i);
         }
 
@@ -82,7 +82,7 @@ public class SuffixTree {
 
     // обновление дерева с символом на i-й позиции
     // при найденных повторениях обновление активной точки
-    private void update(ActivePoint activePoint, int i) {
+    private List<SuffixTreeEdge> update(ActivePoint activePoint, int i, List<SuffixTreeEdge> leafEdges) {
         SuffixTreeNode link = root;
         Split split;
 
@@ -121,6 +121,7 @@ public class SuffixTree {
         if (link != root) {
             link.setSuffixLink(activePoint.activeNode);
         }
+        return leafEdges;
     }
 
     private Split testAndSplit(ActivePoint activePoint, int currentIndex) {
