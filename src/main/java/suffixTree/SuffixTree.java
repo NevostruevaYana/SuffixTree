@@ -31,7 +31,6 @@ public class SuffixTree {
                 contain = false;
                 break;
             }
-
             // edge = null в начале поиска и при переходе в новый edge
             // проверяем есть у searchNode исходящее
             // ребро, начинающееся с char в searchIndex
@@ -54,13 +53,11 @@ public class SuffixTree {
                 parentNode = currentEdge.getNextNode();
                 currentEdge = null;
             }
-
             // если символ соответствует инкрементируем searchIndex и edgeIndex
             // и проверяем дальше
             searchIndex++;
             edgeIndex++;
         }
-
         return contain;
     }
 

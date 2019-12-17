@@ -13,7 +13,6 @@ public class SuffixTreeEdge {
         this.end = -1;
         this.nextNode = null;
     }
-
     // конструктор для посроения ребра с ответвлениями
     SuffixTreeEdge (int start, int end, SuffixTreeNode childNode) {
         this.start = start;
@@ -21,32 +20,17 @@ public class SuffixTreeEdge {
         this.nextNode  = childNode;
     }
 
-    boolean isLeaf() {
-        return (end == -1);
-    }
+    boolean isLeaf() { return (end == -1); }
 
-    int getStart() {
-        return start;
-    }
+    int getStart() { return start; }
 
-    void setStartIndex( int start) {
-        this.start = start;
-    }
+    void setStartIndex( int start) { this.start = start; }
 
-    int getEnd() {
-        return end;
-    }
+    int getEnd() { return end; }
 
-    void setEnd( int end) {
-        this.end = end;
-    }
+    void setEnd(int end) { this.end = end; }
 
-    SuffixTreeNode getNextNode () {
-        return nextNode;
-    }
+    SuffixTreeNode getNextNode() { return nextNode; }
 
-    int getLength() {
-        return end - start + 1;
-    }
-
+    int getLength() { return end - start + 1; }
 }
